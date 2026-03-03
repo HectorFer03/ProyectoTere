@@ -29,9 +29,19 @@ Public Class DashboardForm
         Dim frmVentas As New VentasForm()
         frmVentas.Show()
     End Sub
+    Private Sub btnConsultas(sender As Object, e As EventArgs) Handles btnConsultas.Click
+        Dim frmReportes As New ReportesAdminForm()
+        frmReportes.Show()
+    End Sub
+
+    Private Sub btnActualizar(sender As Object, e As EventArgs) Handles btnActualizar.click
+
+        Dim frmPrecios As New ActualizacionPreciosForm()
+        frmPrecios.Show()
+    End Sub
 
     ' EVENTO NUEVO: Salir y cerrar la aplicación
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnConsultas.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         ' Es importante usar Application.Exit() para matar el proceso, 
         ' ya que el Form1 (Login) está oculto (Me.Hide()) y no cerrado.
         Application.Exit()
