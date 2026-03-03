@@ -22,10 +22,111 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form1"
+        txtUsuario = New TextBox()
+        txtPassword = New TextBox()
+        cmbRol = New ComboBox()
+        btnLogin = New Button()
+        btnRegistrar = New Button()
+        Label1 = New Label()
+        Label2 = New Label()
+        Label3 = New Label()
+        SuspendLayout()
+        ' 
+        ' txtUsuario
+        ' 
+        txtUsuario.Location = New Point(284, 37)
+        txtUsuario.Name = "txtUsuario"
+        txtUsuario.Size = New Size(100, 23)
+        txtUsuario.TabIndex = 0
+        ' 
+        ' txtPassword
+        ' 
+        txtPassword.Location = New Point(284, 66)
+        txtPassword.Name = "txtPassword"
+        txtPassword.PasswordChar = "*"c
+        txtPassword.Size = New Size(100, 23)
+        txtPassword.TabIndex = 1
+        ' 
+        ' cmbRol
+        ' 
+        cmbRol.FormattingEnabled = True
+        cmbRol.Items.AddRange(New Object() {"Admin", "Revisor", "Vendedor"})
+        cmbRol.Location = New Point(284, 95)
+        cmbRol.Name = "cmbRol"
+        cmbRol.Size = New Size(121, 23)
+        cmbRol.TabIndex = 2
+        ' 
+        ' btnLogin
+        ' 
+        btnLogin.Location = New Point(212, 137)
+        btnLogin.Name = "btnLogin"
+        btnLogin.Size = New Size(96, 23)
+        btnLogin.TabIndex = 3
+        btnLogin.Text = "Iniciar Sesion"
+        btnLogin.UseVisualStyleBackColor = True
+        ' 
+        ' btnRegistrar
+        ' 
+        btnRegistrar.Location = New Point(330, 137)
+        btnRegistrar.Name = "btnRegistrar"
+        btnRegistrar.Size = New Size(75, 23)
+        btnRegistrar.TabIndex = 4
+        btnRegistrar.Text = "Registrarse"
+        btnRegistrar.UseVisualStyleBackColor = True
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(212, 40)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(41, 15)
+        Label1.TabIndex = 5
+        Label1.Text = "Label1"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(212, 69)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(41, 15)
+        Label2.TabIndex = 6
+        Label2.Text = "Label2"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(212, 102)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(41, 15)
+        Label3.TabIndex = 7
+        Label3.Text = "Label3"
+        ' 
+        ' Form1
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(800, 450)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
+        Controls.Add(Label1)
+        Controls.Add(btnRegistrar)
+        Controls.Add(btnLogin)
+        Controls.Add(cmbRol)
+        Controls.Add(txtPassword)
+        Controls.Add(txtUsuario)
+        Name = "Form1"
+        Text = "Form1"
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
+
+    Friend WithEvents txtUsuario As TextBox
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents cmbRol As ComboBox
+    Friend WithEvents btnLogin As Button
+    Friend WithEvents btnRegistrar As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 
 End Class
