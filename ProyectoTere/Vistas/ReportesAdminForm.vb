@@ -7,6 +7,7 @@ Public Class ReportesAdminForm
         If SesionGlobal.Rol <> "Admin" Then
             MessageBox.Show("Acceso denegado. Solo administradores.")
             Me.Close()
+
         End If
     End Sub
 
@@ -23,9 +24,12 @@ Public Class ReportesAdminForm
     End Sub
 
     Private Sub btnOrdenadosPorPrecio_Click(sender As Object, e As EventArgs) Handles btnOrdenadosPorPrecio.Click
-        ' Stock que lleva más de 6 meses parado
-        ' (Asume la existencia de una columna fecha_ultima_modificacion o fecha_entrada)
-        Dim query As String = "SELECT id, franquicia, numero_serie, stock FROM Productos WHERE estado_activo = 1 AND fecha_ultima_modificacion < DATE_SUB(NOW(), INTERVAL 6 MONTH)"
+        ' Muestra los productos activos ordenados por su valor de mercado (de mayor a menor)
+        Dim query As String = "SELECT id, tipo, franquicia, numero_serie, valor_mercado, stock " &
+                          "FROM Productos " &
+                          "WHERE estado_activo = 1 " &
+                          "ORDER BY valor_mercado DESC"
+
         dgvReportes.DataSource = db.EjecutarConsulta(query)
     End Sub
 
@@ -33,5 +37,10 @@ Public Class ReportesAdminForm
         ' Ventas por usuario vendedor
         Dim query As String = "SELECT u.username, COUNT(v.id) as Total_Ventas FROM VentasHistorico v JOIN usuarios u ON v.id_vendedor = u.id GROUP BY u.username"
         dgvReportes.DataSource = db.EjecutarConsulta(query)
+    End Sub
+
+    Private Sub dgvReportes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvReportes.CellContentClick
+        dgvReportes.ScrollBars = ScrollBars.Both
+        dgvReportes.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
     End Sub
 End Class

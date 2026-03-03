@@ -23,11 +23,12 @@ Partial Class DashboardForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         pnlMenu = New Panel()
+        btnActualizar = New Button()
+        btnSalir = New Button()
         btnConsultas = New Button()
         btnVentas = New Button()
         btnInventario = New Button()
-        btnSalir = New Button()
-        btnActualizar = New Button()
+        pnlContenedor = New Panel()
         pnlMenu.SuspendLayout()
         SuspendLayout()
         ' 
@@ -42,6 +43,26 @@ Partial Class DashboardForm
         pnlMenu.Name = "pnlMenu"
         pnlMenu.Size = New Size(200, 426)
         pnlMenu.TabIndex = 0
+        ' 
+        ' btnActualizar
+        ' 
+        btnActualizar.BackColor = SystemColors.ActiveCaption
+        btnActualizar.Location = New Point(3, 136)
+        btnActualizar.Name = "btnActualizar"
+        btnActualizar.Size = New Size(194, 40)
+        btnActualizar.TabIndex = 5
+        btnActualizar.Text = "Actualizar"
+        btnActualizar.UseVisualStyleBackColor = False
+        ' 
+        ' btnSalir
+        ' 
+        btnSalir.BackColor = Color.IndianRed
+        btnSalir.Location = New Point(3, 228)
+        btnSalir.Name = "btnSalir"
+        btnSalir.Size = New Size(194, 40)
+        btnSalir.TabIndex = 4
+        btnSalir.Text = "Salir"
+        btnSalir.UseVisualStyleBackColor = False
         ' 
         ' btnConsultas
         ' 
@@ -75,31 +96,19 @@ Partial Class DashboardForm
         btnInventario.Text = "Inventario"
         btnInventario.UseVisualStyleBackColor = False
         ' 
-        ' btnSalir
+        ' pnlContenedor
         ' 
-        btnSalir.BackColor = Color.IndianRed
-        btnSalir.Location = New Point(3, 228)
-        btnSalir.Name = "btnSalir"
-        btnSalir.Size = New Size(194, 40)
-        btnSalir.TabIndex = 4
-        btnSalir.Text = "Salir"
-        btnSalir.UseVisualStyleBackColor = False
-        ' 
-        ' btnActualizar
-        ' 
-        btnActualizar.BackColor = SystemColors.ActiveCaption
-        btnActualizar.Location = New Point(3, 136)
-        btnActualizar.Name = "btnActualizar"
-        btnActualizar.Size = New Size(194, 40)
-        btnActualizar.TabIndex = 5
-        btnActualizar.Text = "Actualizar"
-        btnActualizar.UseVisualStyleBackColor = False
+        pnlContenedor.Location = New Point(232, 12)
+        pnlContenedor.Name = "pnlContenedor"
+        pnlContenedor.Size = New Size(556, 426)
+        pnlContenedor.TabIndex = 6
         ' 
         ' DashboardForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(pnlContenedor)
         Controls.Add(pnlMenu)
         Name = "DashboardForm"
         Text = "DashboardForm"
@@ -113,4 +122,5 @@ Partial Class DashboardForm
     Friend WithEvents btnInventario As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnSalir As Button
+    Friend WithEvents pnlContenedor As Panel
 End Class

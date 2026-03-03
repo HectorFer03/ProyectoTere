@@ -2,48 +2,60 @@
 
 Public Class DashboardForm
 
-    ' Este evento se ejecuta al abrir el formulario
+    ' Variable para recordar qué ventana está abierta actualmente en el panel
+    Private formularioActivo As Form = Nothing
+
     Private Sub DashboardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Configurar interfaz según el rol
         Select Case SesionGlobal.Rol
             Case "Vendedor"
-                ' El vendedor no puede actualizar precios masivos ni ver reportes de admin
                 btnInventario.Text = "Consultar Inventario"
                 btnActualizar.Enabled = False
                 btnConsultas.Enabled = False
             Case "Revisor"
-                ' El revisor gestiona estados y precios
                 btnVentas.Enabled = False
             Case "Admin"
                 ' Control total, todo habilitado
         End Select
     End Sub
 
-    ' EVENTO: Abrir el Inventario
+    ' Función para abrir formularios dentro del pnlContenedor que creaste en el diseñador
+    Private Sub AbrirFormularioHijo(formHijo As Form)
+        ' Si ya hay un formulario abierto, lo cerramos
+        If formularioActivo IsNot Nothing Then
+            formularioActivo.Close()
+        End If
+
+        ' Configuramos el nuevo formulario para que se comporte como un control interno
+        formularioActivo = formHijo
+        formHijo.TopLevel = False
+        formHijo.FormBorderStyle = FormBorderStyle.None
+        formHijo.Dock = DockStyle.Fill
+
+        ' Lo añadimos al panel y lo mostramos
+        pnlContenedor.Controls.Add(formHijo)
+        pnlContenedor.Tag = formHijo
+        formHijo.BringToFront()
+        formHijo.Show()
+    End Sub
+
+    ' EVENTOS DE LOS BOTONES
     Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
-        Dim frmInventario As New InventarioForm()
-        frmInventario.Show()
+        AbrirFormularioHijo(New InventarioForm)
     End Sub
 
-    ' EVENTO: Abrir el formulario de Ventas
     Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
-        Dim frmVentas As New VentasForm()
-        frmVentas.Show()
+        AbrirFormularioHijo(New VentasForm)
     End Sub
 
-    ' EVENTO: Abrir Reportes/Consultas (Corregido el nombre del Sub agregando _Click)
     Private Sub btnConsultas_Click(sender As Object, e As EventArgs) Handles btnConsultas.Click
-        Dim frmReportes As New ReportesAdminForm()
-        frmReportes.Show()
+        AbrirFormularioHijo(New ReportesAdminForm)
     End Sub
 
-    ' EVENTO: Abrir Actualización de precios (Corregido el nombre del Sub agregando _Click)
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        Dim frmPrecios As New ActualizacionPreciosForm()
-        frmPrecios.Show()
+        AbrirFormularioHijo(New ActualizacionPreciosForm)
     End Sub
 
-    ' EVENTO: Salir y cerrar la aplicación
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Application.Exit()
     End Sub

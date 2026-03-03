@@ -55,6 +55,7 @@ Partial Class InventarioForm
         ' cmbTipo
         ' 
         cmbTipo.FormattingEnabled = True
+        cmbTipo.Items.AddRange(New Object() {"Carta TCG", "Figura", "Comic/Manga", "Otro..."})
         cmbTipo.Location = New Point(89, 20)
         cmbTipo.Name = "cmbTipo"
         cmbTipo.Size = New Size(121, 23)
@@ -185,7 +186,7 @@ Partial Class InventarioForm
         ' 
         ' InventarioForm
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
         Controls.Add(btnEliminar)

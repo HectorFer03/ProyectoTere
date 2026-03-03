@@ -35,7 +35,7 @@ Partial Class ActualizacionPreciosForm
         ' cmbCategoria
         ' 
         cmbCategoria.FormattingEnabled = True
-        cmbCategoria.Items.AddRange(New Object() {"Cartas TGC", "Figuras", "Comics/Manga"})
+        cmbCategoria.Items.AddRange(New Object() {"Carta TCG", "Figura", "Comic/Manga", "Otro..."})
         cmbCategoria.Location = New Point(118, 12)
         cmbCategoria.Name = "cmbCategoria"
         cmbCategoria.Size = New Size(121, 23)

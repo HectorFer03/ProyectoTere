@@ -10,7 +10,8 @@ Public Class InventarioForm
         nudValorMercado.Maximum = 1000000
         nudPrecioCoste.DecimalPlaces = 2
         nudValorMercado.DecimalPlaces = 2
-
+        DataGridView1.ScrollBars = ScrollBars.Both
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         CargarInventario()
         ConfigurarPermisos()
     End Sub
@@ -81,17 +82,16 @@ Public Class InventarioForm
         End If
 
         If idProductoSeleccionado > 0 Then
-            ' Actualización parametrizada
+            ' ACTUALIZAR PRODUCTO EXISTENTE
             Dim query As String = "UPDATE Productos SET precio_coste = @coste, valor_mercado = @mercado, descripcion = @desc, stock = @stock WHERE id = @id"
             Dim params As New Dictionary(Of String, Object) From {
-                {"@coste", nudPrecioCoste.Value},
-                {"@mercado", nudValorMercado.Value},
-                {"@desc", txtDescripcion.Text},
-                {"@stock", stockActual},
-                {"@id", idProductoSeleccionado}
-            }
+            {"@coste", nudPrecioCoste.Value},
+            {"@mercado", nudValorMercado.Value},
+            {"@desc", txtDescripcion.Text},
+            {"@stock", stockActual},
+            {"@id", idProductoSeleccionado}
+        }
 
-            ' Comprobamos si realmente se actualizó algo en la BD
             Dim filasAfectadas As Integer = db.EjecutarComando(query, params)
             If filasAfectadas > 0 Then
                 MessageBox.Show("Producto actualizado y guardado en la Base de Datos.")
@@ -99,7 +99,30 @@ Public Class InventarioForm
                 MessageBox.Show("No se detectaron cambios o el producto no existe.")
             End If
         Else
-            MessageBox.Show("Selecciona un producto de la tabla primero.")
+            ' CREAR NUEVO PRODUCTO
+            ' Validamos que los campos obligatorios para un producto nuevo estén llenos
+            If cmbTipo.SelectedIndex = -1 OrElse String.IsNullOrWhiteSpace(txtFranquicia.Text) OrElse String.IsNullOrWhiteSpace(txtNumSerie.Text) Then
+                MessageBox.Show("Debe seleccionar un Tipo y llenar Franquicia y Nº Serie para crear un producto.")
+                Return
+            End If
+
+            Dim queryInsert As String = "INSERT INTO Productos (tipo, franquicia, numero_serie, precio_coste, valor_mercado, descripcion, stock, estado_activo) VALUES (@tipo, @franquicia, @serie, @coste, @mercado, @desc, @stock, 1)"
+            Dim paramsInsert As New Dictionary(Of String, Object) From {
+            {"@tipo", cmbTipo.SelectedItem.ToString()},
+            {"@franquicia", txtFranquicia.Text},
+            {"@serie", txtNumSerie.Text},
+            {"@coste", nudPrecioCoste.Value},
+            {"@mercado", nudValorMercado.Value},
+            {"@desc", txtDescripcion.Text},
+            {"@stock", stockActual}
+        }
+
+            Dim filasInsertadas As Integer = db.EjecutarComando(queryInsert, paramsInsert)
+            If filasInsertadas > 0 Then
+                MessageBox.Show("Nuevo producto creado exitosamente.")
+            Else
+                MessageBox.Show("Error al guardar el nuevo producto.")
+            End If
         End If
 
         CargarInventario()

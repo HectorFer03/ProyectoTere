@@ -55,4 +55,4 @@ VALUES ('admin', '1234', 'Admin');
 
 -- (Opcional) Insertar un producto de prueba
 INSERT INTO Productos (tipo, franquicia, numero_serie, precio_coste, valor_mercado, descripcion, stock, estado_activo, rareza, expansion, estado_grading) 
-VALUES ('Cartas TCG', 'Pokémon', 'PKM-001-CHZ', 15.00, 150.00, 'Charizard Base Set', 5, 1, 'Holo Rare', 'Base Set', 'PSA 8');
+VALUES ('Carta TCG', 'Pokémon', 'PKM-001-CHZ', 15.00, 150.00, 'Charizard Base Set', 5, 1, 'Holo Rare', 'Base Set', 'PSA 8');
