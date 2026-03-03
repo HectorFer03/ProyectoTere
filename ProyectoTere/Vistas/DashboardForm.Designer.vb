@@ -23,15 +23,19 @@ Partial Class DashboardForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         pnlMenu = New Panel()
-        btnSalir = New Button()
+        btnConsultas = New Button()
         btnVentas = New Button()
         btnInventario = New Button()
+        btnSalir = New Button()
+        btnActualizar = New Button()
         pnlMenu.SuspendLayout()
         SuspendLayout()
         ' 
         ' pnlMenu
         ' 
+        pnlMenu.Controls.Add(btnActualizar)
         pnlMenu.Controls.Add(btnSalir)
+        pnlMenu.Controls.Add(btnConsultas)
         pnlMenu.Controls.Add(btnVentas)
         pnlMenu.Controls.Add(btnInventario)
         pnlMenu.Location = New Point(12, 12)
@@ -39,32 +43,57 @@ Partial Class DashboardForm
         pnlMenu.Size = New Size(200, 426)
         pnlMenu.TabIndex = 0
         ' 
-        ' btnSalir
+        ' btnConsultas
         ' 
-        btnSalir.Location = New Point(0, 136)
-        btnSalir.Name = "btnSalir"
-        btnSalir.Size = New Size(194, 40)
-        btnSalir.TabIndex = 3
-        btnSalir.Text = "Salir"
-        btnSalir.UseVisualStyleBackColor = True
+        btnConsultas.BackColor = Color.Moccasin
+        btnConsultas.Location = New Point(3, 182)
+        btnConsultas.Name = "btnConsultas"
+        btnConsultas.Size = New Size(194, 40)
+        btnConsultas.TabIndex = 3
+        btnConsultas.Text = "Consultas"
+        btnConsultas.UseVisualStyleBackColor = False
         ' 
         ' btnVentas
         ' 
+        btnVentas.BackColor = Color.Moccasin
         btnVentas.Location = New Point(3, 88)
         btnVentas.Name = "btnVentas"
         btnVentas.Size = New Size(194, 42)
         btnVentas.TabIndex = 2
         btnVentas.Text = "Ventas"
-        btnVentas.UseVisualStyleBackColor = True
+        btnVentas.UseVisualStyleBackColor = False
         ' 
         ' btnInventario
         ' 
+        btnInventario.BackColor = SystemColors.ActiveCaption
+        btnInventario.FlatAppearance.BorderColor = Color.White
+        btnInventario.ForeColor = SystemColors.ActiveCaptionText
         btnInventario.Location = New Point(3, 44)
         btnInventario.Name = "btnInventario"
         btnInventario.Size = New Size(197, 38)
         btnInventario.TabIndex = 1
         btnInventario.Text = "Inventario"
-        btnInventario.UseVisualStyleBackColor = True
+        btnInventario.UseVisualStyleBackColor = False
+        ' 
+        ' btnSalir
+        ' 
+        btnSalir.BackColor = Color.IndianRed
+        btnSalir.Location = New Point(3, 228)
+        btnSalir.Name = "btnSalir"
+        btnSalir.Size = New Size(194, 40)
+        btnSalir.TabIndex = 4
+        btnSalir.Text = "Salir"
+        btnSalir.UseVisualStyleBackColor = False
+        ' 
+        ' btnActualizar
+        ' 
+        btnActualizar.BackColor = SystemColors.ActiveCaption
+        btnActualizar.Location = New Point(3, 136)
+        btnActualizar.Name = "btnActualizar"
+        btnActualizar.Size = New Size(194, 40)
+        btnActualizar.TabIndex = 5
+        btnActualizar.Text = "Actualizar"
+        btnActualizar.UseVisualStyleBackColor = False
         ' 
         ' DashboardForm
         ' 
@@ -79,7 +108,9 @@ Partial Class DashboardForm
     End Sub
 
     Friend WithEvents pnlMenu As Panel
-    Friend WithEvents btnSalir As Button
+    Friend WithEvents btnConsultas As Button
     Friend WithEvents btnVentas As Button
     Friend WithEvents btnInventario As Button
+    Friend WithEvents btnActualizar As Button
+    Friend WithEvents btnSalir As Button
 End Class
