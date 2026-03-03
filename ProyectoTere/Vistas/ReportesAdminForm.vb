@@ -7,8 +7,14 @@ Public Class ReportesAdminForm
         If SesionGlobal.Rol <> "Admin" Then
             MessageBox.Show("Acceso denegado. Solo administradores.")
             Me.Close()
-
         End If
+
+        ' Activamos las barras de desplazamiento y el anclaje al cargar la ventana
+        dgvReportes.ScrollBars = ScrollBars.Both
+        dgvReportes.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+
+        ' Opcional: Esto ajusta el ancho de las columnas al contenido para que se lea mejor
+        dgvReportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
     End Sub
 
     Private Sub btnInventarioValorado_Click(sender As Object, e As EventArgs) Handles btnInventarioValorado.Click
@@ -39,8 +45,5 @@ Public Class ReportesAdminForm
         dgvReportes.DataSource = db.EjecutarConsulta(query)
     End Sub
 
-    Private Sub dgvReportes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvReportes.CellContentClick
-        dgvReportes.ScrollBars = ScrollBars.Both
-        dgvReportes.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-    End Sub
+    ' Ya puedes borrar el evento dgvReportes_CellContentClick porque ya no lo necesitamos
 End Class

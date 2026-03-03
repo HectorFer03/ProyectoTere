@@ -3,7 +3,7 @@ Imports System.Data
 
 Namespace Datos
     Public Class AccesoDatos
-        ' Cambia el puerto o contraseña según tu XAMPP/MySQL
+        ' Cambia el puerto o contraseña segun tu configuración local de MySQL
         Private ReadOnly connectionString As String = "Server=localhost;Port=3306;Database=proyectotere_db;Uid=root;Pwd=root;"
 
         Public Function EjecutarConsulta(query As String, Optional parametros As Dictionary(Of String, Object) = Nothing) As DataTable
