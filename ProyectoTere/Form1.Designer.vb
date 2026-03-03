@@ -24,12 +24,9 @@ Partial Class Form1
     Private Sub InitializeComponent()
         txtUsuario = New TextBox()
         txtPassword = New TextBox()
-        cmbRol = New ComboBox()
         btnLogin = New Button()
-        btnRegistrar = New Button()
         Label1 = New Label()
         Label2 = New Label()
-        Label3 = New Label()
         Label4 = New Label()
         SuspendLayout()
         ' 
@@ -50,35 +47,15 @@ Partial Class Form1
         txtPassword.Size = New Size(192, 41)
         txtPassword.TabIndex = 1
         ' 
-        ' cmbRol
-        ' 
-        cmbRol.Font = New Font("Segoe UI", 19F)
-        cmbRol.FormattingEnabled = True
-        cmbRol.Items.AddRange(New Object() {"Admin", "Revisor", "Vendedor"})
-        cmbRol.Location = New Point(310, 240)
-        cmbRol.Name = "cmbRol"
-        cmbRol.Size = New Size(192, 43)
-        cmbRol.TabIndex = 2
-        ' 
         ' btnLogin
         ' 
         btnLogin.Font = New Font("Segoe UI", 19F)
-        btnLogin.Location = New Point(168, 303)
+        btnLogin.Location = New Point(239, 235)
         btnLogin.Name = "btnLogin"
         btnLogin.Size = New Size(183, 45)
         btnLogin.TabIndex = 3
         btnLogin.Text = "Iniciar Sesion"
         btnLogin.UseVisualStyleBackColor = True
-        ' 
-        ' btnRegistrar
-        ' 
-        btnRegistrar.Font = New Font("Segoe UI", 19F)
-        btnRegistrar.Location = New Point(357, 303)
-        btnRegistrar.Name = "btnRegistrar"
-        btnRegistrar.Size = New Size(162, 45)
-        btnRegistrar.TabIndex = 4
-        btnRegistrar.Text = "Registrarse"
-        btnRegistrar.UseVisualStyleBackColor = True
         ' 
         ' Label1
         ' 
@@ -100,16 +77,6 @@ Partial Class Form1
         Label2.TabIndex = 6
         Label2.Text = "Contraseña"
         ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 19F)
-        Label3.Location = New Point(168, 243)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(51, 36)
-        Label3.TabIndex = 7
-        Label3.Text = "Rol"
-        ' 
         ' Label4
         ' 
         Label4.AutoSize = True
@@ -124,14 +91,11 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(664, 372)
+        ClientSize = New Size(664, 311)
         Controls.Add(Label4)
-        Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(btnRegistrar)
         Controls.Add(btnLogin)
-        Controls.Add(cmbRol)
         Controls.Add(txtPassword)
         Controls.Add(txtUsuario)
         Name = "Form1"
@@ -142,12 +106,9 @@ Partial Class Form1
 
     Friend WithEvents txtUsuario As TextBox
     Friend WithEvents txtPassword As TextBox
-    Friend WithEvents cmbRol As ComboBox
     Friend WithEvents btnLogin As Button
-    Friend WithEvents btnRegistrar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
 
 End Class

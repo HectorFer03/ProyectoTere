@@ -33,14 +33,14 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs)
         If String.IsNullOrWhiteSpace(txtUsuario.Text) OrElse String.IsNullOrWhiteSpace(txtPassword.Text) OrElse cmbRol.SelectedItem Is Nothing Then
             MessageBox.Show("Complete todos los campos y seleccione un rol.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
         Try
-            Dim checkQuery As String = "SELECT COUNT(*) FROM usuarios WHERE username = @user"
+            Dim checkQuery = "SELECT COUNT(*) FROM usuarios WHERE username = @user"
             Dim checkParams As New Dictionary(Of String, Object) From {{"@user", txtUsuario.Text}}
             Dim dtCheck = db.EjecutarConsulta(checkQuery, checkParams)
 
@@ -49,11 +49,11 @@ Public Class Form1
                 Return
             End If
 
-            Dim insertQuery As String = "INSERT INTO usuarios (username, password, rol) VALUES (@user, @pass, @rol)"
+            Dim insertQuery = "INSERT INTO usuarios (username, password, rol) VALUES (@user, @pass, @rol)"
             Dim insertParams As New Dictionary(Of String, Object) From {
                 {"@user", txtUsuario.Text},
                 {"@pass", txtPassword.Text},
-                {"@rol", cmbRol.SelectedItem.ToString()}
+                {"@rol", cmbRol.SelectedItem.ToString}
             }
 
             db.EjecutarComando(insertQuery, insertParams)
