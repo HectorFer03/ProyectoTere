@@ -27,20 +27,21 @@ Partial Class ReportesAdminForm
         btnOrdenadosPorPrecio = New Button()
         btnMasVendido = New Button()
         btnVentasPorUsuario = New Button()
+        Label4 = New Label()
         CType(dgvReportes, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' dgvReportes
         ' 
         dgvReportes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvReportes.Location = New Point(-2, 51)
+        dgvReportes.Location = New Point(-2, 207)
         dgvReportes.Name = "dgvReportes"
-        dgvReportes.Size = New Size(571, 400)
+        dgvReportes.Size = New Size(571, 244)
         dgvReportes.TabIndex = 0
         ' 
         ' btnInventarioValorado
         ' 
-        btnInventarioValorado.Location = New Point(1, -1)
+        btnInventarioValorado.Location = New Point(12, 58)
         btnInventarioValorado.Name = "btnInventarioValorado"
         btnInventarioValorado.Size = New Size(115, 26)
         btnInventarioValorado.TabIndex = 1
@@ -49,7 +50,7 @@ Partial Class ReportesAdminForm
         ' 
         ' btnOrdenadosPorPrecio
         ' 
-        btnOrdenadosPorPrecio.Location = New Point(137, -1)
+        btnOrdenadosPorPrecio.Location = New Point(12, 90)
         btnOrdenadosPorPrecio.Name = "btnOrdenadosPorPrecio"
         btnOrdenadosPorPrecio.Size = New Size(137, 26)
         btnOrdenadosPorPrecio.TabIndex = 2
@@ -58,7 +59,7 @@ Partial Class ReportesAdminForm
         ' 
         ' btnMasVendido
         ' 
-        btnMasVendido.Location = New Point(296, -1)
+        btnMasVendido.Location = New Point(12, 122)
         btnMasVendido.Name = "btnMasVendido"
         btnMasVendido.Size = New Size(144, 26)
         btnMasVendido.TabIndex = 3
@@ -67,18 +68,29 @@ Partial Class ReportesAdminForm
         ' 
         ' btnVentasPorUsuario
         ' 
-        btnVentasPorUsuario.Location = New Point(454, -1)
+        btnVentasPorUsuario.Location = New Point(12, 154)
         btnVentasPorUsuario.Name = "btnVentasPorUsuario"
         btnVentasPorUsuario.Size = New Size(115, 26)
         btnVentasPorUsuario.TabIndex = 4
         btnVentasPorUsuario.Text = "Ventas por Usuario"
         btnVentasPorUsuario.UseVisualStyleBackColor = True
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 19F)
+        Label4.Location = New Point(12, 9)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(215, 36)
+        Label4.TabIndex = 9
+        Label4.Text = "Consultas rapidas"
+        ' 
         ' ReportesAdminForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(570, 450)
+        Controls.Add(Label4)
         Controls.Add(btnVentasPorUsuario)
         Controls.Add(btnMasVendido)
         Controls.Add(btnOrdenadosPorPrecio)
@@ -88,6 +100,7 @@ Partial Class ReportesAdminForm
         Text = "ReportesAdminForm"
         CType(dgvReportes, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents dgvReportes As DataGridView
@@ -95,4 +108,5 @@ Partial Class ReportesAdminForm
     Friend WithEvents btnOrdenadosPorPrecio As Button
     Friend WithEvents btnMasVendido As Button
     Friend WithEvents btnVentasPorUsuario As Button
+    Friend WithEvents Label4 As Label
 End Class

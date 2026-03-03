@@ -39,6 +39,7 @@ Partial Class InventarioForm
         txtStock = New TextBox()
         btnGuardar = New Button()
         btnEliminar = New Button()
+        Label8 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(nudValorMercado, ComponentModel.ISupportInitialize).BeginInit()
         CType(nudPrecioCoste, ComponentModel.ISupportInitialize).BeginInit()
@@ -56,21 +57,21 @@ Partial Class InventarioForm
         ' 
         cmbTipo.FormattingEnabled = True
         cmbTipo.Items.AddRange(New Object() {"Carta TCG", "Figura", "Comic/Manga", "Otro..."})
-        cmbTipo.Location = New Point(89, 20)
+        cmbTipo.Location = New Point(87, 70)
         cmbTipo.Name = "cmbTipo"
         cmbTipo.Size = New Size(121, 23)
         cmbTipo.TabIndex = 1
         ' 
         ' txtFranquicia
         ' 
-        txtFranquicia.Location = New Point(89, 49)
+        txtFranquicia.Location = New Point(87, 99)
         txtFranquicia.Name = "txtFranquicia"
         txtFranquicia.Size = New Size(100, 23)
         txtFranquicia.TabIndex = 2
         ' 
         ' txtNumSerie
         ' 
-        txtNumSerie.Location = New Point(89, 78)
+        txtNumSerie.Location = New Point(87, 128)
         txtNumSerie.Name = "txtNumSerie"
         txtNumSerie.Size = New Size(100, 23)
         txtNumSerie.TabIndex = 3
@@ -78,7 +79,7 @@ Partial Class InventarioForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(30, 23)
+        Label1.Location = New Point(28, 73)
         Label1.Name = "Label1"
         Label1.Size = New Size(31, 15)
         Label1.TabIndex = 4
@@ -87,7 +88,7 @@ Partial Class InventarioForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(30, 81)
+        Label2.Location = New Point(28, 131)
         Label2.Name = "Label2"
         Label2.Size = New Size(49, 15)
         Label2.TabIndex = 5
@@ -96,7 +97,7 @@ Partial Class InventarioForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(239, 23)
+        Label3.Location = New Point(237, 73)
         Label3.Name = "Label3"
         Label3.Size = New Size(40, 15)
         Label3.TabIndex = 6
@@ -105,7 +106,7 @@ Partial Class InventarioForm
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(21, 52)
+        Label4.Location = New Point(19, 102)
         Label4.Name = "Label4"
         Label4.Size = New Size(62, 15)
         Label4.TabIndex = 7
@@ -114,7 +115,7 @@ Partial Class InventarioForm
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(239, 49)
+        Label5.Location = New Point(237, 99)
         Label5.Name = "Label5"
         Label5.Size = New Size(33, 15)
         Label5.TabIndex = 8
@@ -123,7 +124,7 @@ Partial Class InventarioForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(29, 110)
+        Label6.Location = New Point(27, 160)
         Label6.Name = "Label6"
         Label6.Size = New Size(36, 15)
         Label6.TabIndex = 9
@@ -132,7 +133,7 @@ Partial Class InventarioForm
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(223, 76)
+        Label7.Location = New Point(221, 126)
         Label7.Name = "Label7"
         Label7.Size = New Size(69, 15)
         Label7.TabIndex = 10
@@ -140,35 +141,35 @@ Partial Class InventarioForm
         ' 
         ' nudValorMercado
         ' 
-        nudValorMercado.Location = New Point(299, 47)
+        nudValorMercado.Location = New Point(297, 97)
         nudValorMercado.Name = "nudValorMercado"
         nudValorMercado.Size = New Size(120, 23)
         nudValorMercado.TabIndex = 11
         ' 
         ' nudPrecioCoste
         ' 
-        nudPrecioCoste.Location = New Point(298, 20)
+        nudPrecioCoste.Location = New Point(296, 70)
         nudPrecioCoste.Name = "nudPrecioCoste"
         nudPrecioCoste.Size = New Size(120, 23)
         nudPrecioCoste.TabIndex = 12
         ' 
         ' txtDescripcion
         ' 
-        txtDescripcion.Location = New Point(299, 73)
+        txtDescripcion.Location = New Point(297, 123)
         txtDescripcion.Name = "txtDescripcion"
         txtDescripcion.Size = New Size(100, 23)
         txtDescripcion.TabIndex = 13
         ' 
         ' txtStock
         ' 
-        txtStock.Location = New Point(89, 107)
+        txtStock.Location = New Point(87, 157)
         txtStock.Name = "txtStock"
         txtStock.Size = New Size(100, 23)
         txtStock.TabIndex = 14
         ' 
         ' btnGuardar
         ' 
-        btnGuardar.Location = New Point(135, 136)
+        btnGuardar.Location = New Point(133, 186)
         btnGuardar.Name = "btnGuardar"
         btnGuardar.Size = New Size(75, 23)
         btnGuardar.TabIndex = 15
@@ -177,18 +178,29 @@ Partial Class InventarioForm
         ' 
         ' btnEliminar
         ' 
-        btnEliminar.Location = New Point(235, 136)
+        btnEliminar.Location = New Point(233, 186)
         btnEliminar.Name = "btnEliminar"
         btnEliminar.Size = New Size(75, 23)
         btnEliminar.TabIndex = 16
         btnEliminar.Text = "Eliminar"
         btnEliminar.UseVisualStyleBackColor = True
         ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Segoe UI", 19F)
+        Label8.Location = New Point(19, 9)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(130, 36)
+        Label8.TabIndex = 17
+        Label8.Text = "Inventario"
+        ' 
         ' InventarioForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Label8)
         Controls.Add(btnEliminar)
         Controls.Add(btnGuardar)
         Controls.Add(txtStock)
@@ -232,4 +244,5 @@ Partial Class InventarioForm
     Friend WithEvents txtStock As TextBox
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnEliminar As Button
+    Friend WithEvents Label8 As Label
 End Class

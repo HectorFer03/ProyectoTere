@@ -32,6 +32,7 @@ Partial Class VentasForm
         btnVender = New Button()
         GroupBox2 = New GroupBox()
         btnDevolver = New Button()
+        Label4 = New Label()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
         SuspendLayout()
@@ -91,7 +92,7 @@ Partial Class VentasForm
         GroupBox1.Controls.Add(txtIdArticulo)
         GroupBox1.Controls.Add(Label1)
         GroupBox1.Controls.Add(Label2)
-        GroupBox1.Location = New Point(12, 23)
+        GroupBox1.Location = New Point(33, 67)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(200, 127)
         GroupBox1.TabIndex = 6
@@ -112,7 +113,7 @@ Partial Class VentasForm
         GroupBox2.Controls.Add(btnDevolver)
         GroupBox2.Controls.Add(Label3)
         GroupBox2.Controls.Add(txtIdVentaHistorico)
-        GroupBox2.Location = New Point(12, 156)
+        GroupBox2.Location = New Point(33, 200)
         GroupBox2.Name = "GroupBox2"
         GroupBox2.Size = New Size(200, 100)
         GroupBox2.TabIndex = 7
@@ -128,11 +129,22 @@ Partial Class VentasForm
         btnDevolver.Text = "Devolver"
         btnDevolver.UseVisualStyleBackColor = True
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 19F)
+        Label4.Location = New Point(33, 19)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(268, 36)
+        Label4.TabIndex = 8
+        Label4.Text = "Ventas y devoluciones"
+        ' 
         ' VentasForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Label4)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
         Name = "VentasForm"
@@ -142,6 +154,7 @@ Partial Class VentasForm
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents Label1 As Label
@@ -154,4 +167,5 @@ Partial Class VentasForm
     Friend WithEvents btnVender As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btnDevolver As Button
+    Friend WithEvents Label4 As Label
 End Class

@@ -29,11 +29,13 @@ Partial Class DashboardForm
         btnVentas = New Button()
         btnInventario = New Button()
         pnlContenedor = New Panel()
+        Label4 = New Label()
         pnlMenu.SuspendLayout()
         SuspendLayout()
         ' 
         ' pnlMenu
         ' 
+        pnlMenu.Controls.Add(Label4)
         pnlMenu.Controls.Add(btnActualizar)
         pnlMenu.Controls.Add(btnSalir)
         pnlMenu.Controls.Add(btnConsultas)
@@ -47,7 +49,7 @@ Partial Class DashboardForm
         ' btnActualizar
         ' 
         btnActualizar.BackColor = SystemColors.ActiveCaption
-        btnActualizar.Location = New Point(3, 136)
+        btnActualizar.Location = New Point(3, 191)
         btnActualizar.Name = "btnActualizar"
         btnActualizar.Size = New Size(194, 40)
         btnActualizar.TabIndex = 5
@@ -57,7 +59,7 @@ Partial Class DashboardForm
         ' btnSalir
         ' 
         btnSalir.BackColor = Color.IndianRed
-        btnSalir.Location = New Point(3, 228)
+        btnSalir.Location = New Point(3, 283)
         btnSalir.Name = "btnSalir"
         btnSalir.Size = New Size(194, 40)
         btnSalir.TabIndex = 4
@@ -67,7 +69,7 @@ Partial Class DashboardForm
         ' btnConsultas
         ' 
         btnConsultas.BackColor = Color.Moccasin
-        btnConsultas.Location = New Point(3, 182)
+        btnConsultas.Location = New Point(3, 237)
         btnConsultas.Name = "btnConsultas"
         btnConsultas.Size = New Size(194, 40)
         btnConsultas.TabIndex = 3
@@ -77,7 +79,7 @@ Partial Class DashboardForm
         ' btnVentas
         ' 
         btnVentas.BackColor = Color.Moccasin
-        btnVentas.Location = New Point(3, 88)
+        btnVentas.Location = New Point(3, 143)
         btnVentas.Name = "btnVentas"
         btnVentas.Size = New Size(194, 42)
         btnVentas.TabIndex = 2
@@ -89,7 +91,7 @@ Partial Class DashboardForm
         btnInventario.BackColor = SystemColors.ActiveCaption
         btnInventario.FlatAppearance.BorderColor = Color.White
         btnInventario.ForeColor = SystemColors.ActiveCaptionText
-        btnInventario.Location = New Point(3, 44)
+        btnInventario.Location = New Point(3, 99)
         btnInventario.Name = "btnInventario"
         btnInventario.Size = New Size(197, 38)
         btnInventario.TabIndex = 1
@@ -103,9 +105,19 @@ Partial Class DashboardForm
         pnlContenedor.Size = New Size(556, 426)
         pnlContenedor.TabIndex = 6
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 19F)
+        Label4.Location = New Point(3, 10)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(186, 36)
+        Label4.TabIndex = 9
+        Label4.Text = "Menu principal"
+        ' 
         ' DashboardForm
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
         Controls.Add(pnlContenedor)
@@ -113,6 +125,7 @@ Partial Class DashboardForm
         Name = "DashboardForm"
         Text = "DashboardForm"
         pnlMenu.ResumeLayout(False)
+        pnlMenu.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -123,4 +136,5 @@ Partial Class DashboardForm
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents pnlContenedor As Panel
+    Friend WithEvents Label4 As Label
 End Class

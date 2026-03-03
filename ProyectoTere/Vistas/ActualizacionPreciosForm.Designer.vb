@@ -29,6 +29,7 @@ Partial Class ActualizacionPreciosForm
         txtFranquiciaObjetivo = New TextBox()
         nudPorcentaje = New NumericUpDown()
         btnActualizarMasivo = New Button()
+        Label4 = New Label()
         CType(nudPorcentaje, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -36,7 +37,7 @@ Partial Class ActualizacionPreciosForm
         ' 
         cmbCategoria.FormattingEnabled = True
         cmbCategoria.Items.AddRange(New Object() {"Carta TCG", "Figura", "Comic/Manga", "Otro..."})
-        cmbCategoria.Location = New Point(118, 12)
+        cmbCategoria.Location = New Point(111, 56)
         cmbCategoria.Name = "cmbCategoria"
         cmbCategoria.Size = New Size(121, 23)
         cmbCategoria.TabIndex = 0
@@ -44,7 +45,7 @@ Partial Class ActualizacionPreciosForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(34, 15)
+        Label1.Location = New Point(27, 59)
         Label1.Name = "Label1"
         Label1.Size = New Size(58, 15)
         Label1.TabIndex = 1
@@ -53,7 +54,7 @@ Partial Class ActualizacionPreciosForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(34, 57)
+        Label2.Location = New Point(27, 101)
         Label2.Name = "Label2"
         Label2.Size = New Size(62, 15)
         Label2.TabIndex = 2
@@ -62,7 +63,7 @@ Partial Class ActualizacionPreciosForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(12, 91)
+        Label3.Location = New Point(5, 135)
         Label3.Name = "Label3"
         Label3.Size = New Size(87, 15)
         Label3.TabIndex = 3
@@ -70,32 +71,43 @@ Partial Class ActualizacionPreciosForm
         ' 
         ' txtFranquiciaObjetivo
         ' 
-        txtFranquiciaObjetivo.Location = New Point(119, 49)
+        txtFranquiciaObjetivo.Location = New Point(112, 93)
         txtFranquiciaObjetivo.Name = "txtFranquiciaObjetivo"
         txtFranquiciaObjetivo.Size = New Size(100, 23)
         txtFranquiciaObjetivo.TabIndex = 4
         ' 
         ' nudPorcentaje
         ' 
-        nudPorcentaje.Location = New Point(119, 83)
+        nudPorcentaje.Location = New Point(112, 127)
         nudPorcentaje.Name = "nudPorcentaje"
         nudPorcentaje.Size = New Size(120, 23)
         nudPorcentaje.TabIndex = 5
         ' 
         ' btnActualizarMasivo
         ' 
-        btnActualizarMasivo.Location = New Point(80, 137)
+        btnActualizarMasivo.Location = New Point(73, 181)
         btnActualizarMasivo.Name = "btnActualizarMasivo"
         btnActualizarMasivo.Size = New Size(75, 23)
         btnActualizarMasivo.TabIndex = 6
         btnActualizarMasivo.Text = "Actualizar"
         btnActualizarMasivo.UseVisualStyleBackColor = True
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 19F)
+        Label4.Location = New Point(27, 9)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(153, 36)
+        Label4.TabIndex = 9
+        Label4.Text = "Actulizacion"
+        ' 
         ' ActualizacionPreciosForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Label4)
         Controls.Add(btnActualizarMasivo)
         Controls.Add(nudPorcentaje)
         Controls.Add(txtFranquiciaObjetivo)
@@ -117,4 +129,5 @@ Partial Class ActualizacionPreciosForm
     Friend WithEvents txtFranquiciaObjetivo As TextBox
     Friend WithEvents nudPorcentaje As NumericUpDown
     Friend WithEvents btnActualizarMasivo As Button
+    Friend WithEvents Label4 As Label
 End Class

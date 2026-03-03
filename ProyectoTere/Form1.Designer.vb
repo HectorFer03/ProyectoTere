@@ -30,12 +30,13 @@ Partial Class Form1
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
+        Label4 = New Label()
         SuspendLayout()
         ' 
         ' txtUsuario
         ' 
         txtUsuario.Font = New Font("Segoe UI", 19F)
-        txtUsuario.Location = New Point(154, 9)
+        txtUsuario.Location = New Point(310, 117)
         txtUsuario.Name = "txtUsuario"
         txtUsuario.Size = New Size(192, 41)
         txtUsuario.TabIndex = 0
@@ -43,7 +44,7 @@ Partial Class Form1
         ' txtPassword
         ' 
         txtPassword.Font = New Font("Segoe UI", 19F)
-        txtPassword.Location = New Point(154, 66)
+        txtPassword.Location = New Point(310, 174)
         txtPassword.Name = "txtPassword"
         txtPassword.PasswordChar = "*"c
         txtPassword.Size = New Size(192, 41)
@@ -54,7 +55,7 @@ Partial Class Form1
         cmbRol.Font = New Font("Segoe UI", 19F)
         cmbRol.FormattingEnabled = True
         cmbRol.Items.AddRange(New Object() {"Admin", "Revisor", "Vendedor"})
-        cmbRol.Location = New Point(154, 132)
+        cmbRol.Location = New Point(310, 240)
         cmbRol.Name = "cmbRol"
         cmbRol.Size = New Size(192, 43)
         cmbRol.TabIndex = 2
@@ -62,7 +63,7 @@ Partial Class Form1
         ' btnLogin
         ' 
         btnLogin.Font = New Font("Segoe UI", 19F)
-        btnLogin.Location = New Point(12, 195)
+        btnLogin.Location = New Point(168, 303)
         btnLogin.Name = "btnLogin"
         btnLogin.Size = New Size(183, 45)
         btnLogin.TabIndex = 3
@@ -72,7 +73,7 @@ Partial Class Form1
         ' btnRegistrar
         ' 
         btnRegistrar.Font = New Font("Segoe UI", 19F)
-        btnRegistrar.Location = New Point(201, 195)
+        btnRegistrar.Location = New Point(357, 303)
         btnRegistrar.Name = "btnRegistrar"
         btnRegistrar.Size = New Size(162, 45)
         btnRegistrar.TabIndex = 4
@@ -83,7 +84,7 @@ Partial Class Form1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 19F)
-        Label1.Location = New Point(12, 9)
+        Label1.Location = New Point(168, 117)
         Label1.Name = "Label1"
         Label1.Size = New Size(102, 36)
         Label1.TabIndex = 5
@@ -93,7 +94,7 @@ Partial Class Form1
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 19F)
-        Label2.Location = New Point(12, 69)
+        Label2.Location = New Point(168, 177)
         Label2.Name = "Label2"
         Label2.Size = New Size(145, 36)
         Label2.TabIndex = 6
@@ -103,17 +104,28 @@ Partial Class Form1
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 19F)
-        Label3.Location = New Point(12, 135)
+        Label3.Location = New Point(168, 243)
         Label3.Name = "Label3"
         Label3.Size = New Size(51, 36)
         Label3.TabIndex = 7
         Label3.Text = "Rol"
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 29F)
+        Label4.Location = New Point(213, 34)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(237, 52)
+        Label4.TabIndex = 8
+        Label4.Text = "Fothel Cards"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(455, 250)
+        ClientSize = New Size(664, 372)
+        Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
@@ -136,5 +148,6 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 
 End Class
