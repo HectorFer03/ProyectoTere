@@ -28,7 +28,7 @@ Partial Class Form1
         Label1 = New Label()
         Label2 = New Label()
         Label4 = New Label()
-        Button1 = New Button()
+        btnRegistrar = New Button()
         SuspendLayout()
         ' 
         ' txtUsuario
@@ -88,22 +88,22 @@ Partial Class Form1
         Label4.TabIndex = 8
         Label4.Text = "Fothel Cards"
         ' 
-        ' Button1
+        ' btnRegistrar
         ' 
-        Button1.Font = New Font("Segoe UI", 19F)
-        Button1.Location = New Point(383, 232)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(183, 45)
-        Button1.TabIndex = 9
-        Button1.Text = "Registro"
-        Button1.UseVisualStyleBackColor = True
+        btnRegistrar.Font = New Font("Segoe UI", 19F)
+        btnRegistrar.Location = New Point(383, 232)
+        btnRegistrar.Name = "btnRegistrar"
+        btnRegistrar.Size = New Size(183, 45)
+        btnRegistrar.TabIndex = 9
+        btnRegistrar.Text = "Registro"
+        btnRegistrar.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(664, 311)
-        Controls.Add(Button1)
+        Controls.Add(btnRegistrar)
         Controls.Add(Label4)
         Controls.Add(Label2)
         Controls.Add(Label1)
@@ -122,6 +122,6 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnRegistrar As Button
 
 End Class

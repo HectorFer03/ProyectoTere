@@ -33,7 +33,8 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs)
-
+    Private Sub btnRegistrar_Click_1(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+        Dim ventanaRegistro As New Registro()
+        ventanaRegistro.ShowDialog()
     End Sub
 End Class

@@ -12,8 +12,10 @@ Public Class DashboardForm
                 btnInventario.Text = "Consultar Inventario"
                 btnActualizar.Enabled = False
                 btnConsultas.Enabled = False
+                btnGestionUsuarios.Enabled = False
             Case "Revisor"
                 btnVentas.Enabled = False
+                btnGestionUsuarios.Enabled = False
             Case "Admin"
                 ' Control total, todo habilitado
         End Select
@@ -60,7 +62,7 @@ Public Class DashboardForm
         Application.Exit()
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
+    Private Sub btnGestionUsuarios_Click(sender As Object, e As EventArgs) Handles btnGestionUsuarios.Click
+        AbrirFormularioHijo(New CrearUsuarioForm())
     End Sub
 End Class

@@ -23,18 +23,20 @@ Partial Class DashboardForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         pnlMenu = New Panel()
+        btnGestionUsuarios = New Button()
+        Label4 = New Label()
         btnActualizar = New Button()
         btnSalir = New Button()
         btnConsultas = New Button()
         btnVentas = New Button()
         btnInventario = New Button()
         pnlContenedor = New Panel()
-        Label4 = New Label()
         pnlMenu.SuspendLayout()
         SuspendLayout()
         ' 
         ' pnlMenu
         ' 
+        pnlMenu.Controls.Add(btnGestionUsuarios)
         pnlMenu.Controls.Add(Label4)
         pnlMenu.Controls.Add(btnActualizar)
         pnlMenu.Controls.Add(btnSalir)
@@ -45,6 +47,26 @@ Partial Class DashboardForm
         pnlMenu.Name = "pnlMenu"
         pnlMenu.Size = New Size(200, 426)
         pnlMenu.TabIndex = 0
+        ' 
+        ' btnGestionUsuarios
+        ' 
+        btnGestionUsuarios.BackColor = SystemColors.ActiveCaption
+        btnGestionUsuarios.Location = New Point(6, 283)
+        btnGestionUsuarios.Name = "btnGestionUsuarios"
+        btnGestionUsuarios.Size = New Size(194, 40)
+        btnGestionUsuarios.TabIndex = 10
+        btnGestionUsuarios.Text = "Crear Usuario"
+        btnGestionUsuarios.UseVisualStyleBackColor = False
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 19F)
+        Label4.Location = New Point(3, 10)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(186, 36)
+        Label4.TabIndex = 9
+        Label4.Text = "Menu principal"
         ' 
         ' btnActualizar
         ' 
@@ -59,7 +81,7 @@ Partial Class DashboardForm
         ' btnSalir
         ' 
         btnSalir.BackColor = Color.IndianRed
-        btnSalir.Location = New Point(3, 283)
+        btnSalir.Location = New Point(6, 329)
         btnSalir.Name = "btnSalir"
         btnSalir.Size = New Size(194, 40)
         btnSalir.TabIndex = 4
@@ -105,16 +127,6 @@ Partial Class DashboardForm
         pnlContenedor.Size = New Size(556, 426)
         pnlContenedor.TabIndex = 6
         ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 19F)
-        Label4.Location = New Point(3, 10)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(186, 36)
-        Label4.TabIndex = 9
-        Label4.Text = "Menu principal"
-        ' 
         ' DashboardForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -137,4 +149,5 @@ Partial Class DashboardForm
     Friend WithEvents btnSalir As Button
     Friend WithEvents pnlContenedor As Panel
     Friend WithEvents Label4 As Label
+    Friend WithEvents btnGestionUsuarios As Button
 End Class
