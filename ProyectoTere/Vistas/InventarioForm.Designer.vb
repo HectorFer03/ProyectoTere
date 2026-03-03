@@ -37,6 +37,8 @@ Partial Class InventarioForm
         nudPrecioCoste = New NumericUpDown()
         txtDescripcion = New TextBox()
         txtStock = New TextBox()
+        btnGuardar = New Button()
+        btnEliminar = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(nudValorMercado, ComponentModel.ISupportInitialize).BeginInit()
         CType(nudPrecioCoste, ComponentModel.ISupportInitialize).BeginInit()
@@ -163,11 +165,31 @@ Partial Class InventarioForm
         txtStock.Size = New Size(100, 23)
         txtStock.TabIndex = 14
         ' 
+        ' btnGuardar
+        ' 
+        btnGuardar.Location = New Point(46, 245)
+        btnGuardar.Name = "btnGuardar"
+        btnGuardar.Size = New Size(75, 23)
+        btnGuardar.TabIndex = 15
+        btnGuardar.Text = "Guardar"
+        btnGuardar.UseVisualStyleBackColor = True
+        ' 
+        ' btnEliminar
+        ' 
+        btnEliminar.Location = New Point(146, 245)
+        btnEliminar.Name = "btnEliminar"
+        btnEliminar.Size = New Size(75, 23)
+        btnEliminar.TabIndex = 16
+        btnEliminar.Text = "Eliminar"
+        btnEliminar.UseVisualStyleBackColor = True
+        ' 
         ' InventarioForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(btnEliminar)
+        Controls.Add(btnGuardar)
         Controls.Add(txtStock)
         Controls.Add(txtDescripcion)
         Controls.Add(nudPrecioCoste)
@@ -207,4 +229,6 @@ Partial Class InventarioForm
     Friend WithEvents nudPrecioCoste As NumericUpDown
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents txtStock As TextBox
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnEliminar As Button
 End Class
