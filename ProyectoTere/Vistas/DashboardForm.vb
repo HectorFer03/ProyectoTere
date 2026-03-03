@@ -1,13 +1,18 @@
-﻿Public Class DashboardForm
-    Private Sub btnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
+﻿Imports ProyectoTere.Datos
 
-    End Sub
-
-    Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
-
-    End Sub
-
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-
+Public Class DashboardForm
+    Private Sub DashboardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Configurar interfaz según el rol
+        Select Case SesionGlobal.Rol
+            Case "Vendedor"
+                ' El vendedor no puede actualizar precios masivos ni ver reportes de admin
+                btnInventario.Text = "Consultar Inventario"
+                ' Ocultar botones de reportes si los añades
+            Case "Revisor"
+                ' El revisor gestiona estados y precios
+                btnVentas.Enabled = False ' Por ejemplo, no hace ventas
+            Case "Admin"
+                ' Control total, todo habilitado
+        End Select
     End Sub
 End Class
