@@ -33,9 +33,9 @@ Partial Class ReportesAdminForm
         ' dgvReportes
         ' 
         dgvReportes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvReportes.Location = New Point(-2, -1)
+        dgvReportes.Location = New Point(-2, 51)
         dgvReportes.Name = "dgvReportes"
-        dgvReportes.Size = New Size(571, 452)
+        dgvReportes.Size = New Size(571, 400)
         dgvReportes.TabIndex = 0
         ' 
         ' btnInventarioValorado

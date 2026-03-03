@@ -47,9 +47,9 @@ Partial Class InventarioForm
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(-1, -2)
+        DataGridView1.Location = New Point(-1, 220)
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(801, 452)
+        DataGridView1.Size = New Size(801, 230)
         DataGridView1.TabIndex = 0
         ' 
         ' cmbTipo
@@ -95,7 +95,7 @@ Partial Class InventarioForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(30, 110)
+        Label3.Location = New Point(239, 23)
         Label3.Name = "Label3"
         Label3.Size = New Size(40, 15)
         Label3.TabIndex = 6
@@ -113,7 +113,7 @@ Partial Class InventarioForm
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(30, 136)
+        Label5.Location = New Point(239, 49)
         Label5.Name = "Label5"
         Label5.Size = New Size(33, 15)
         Label5.TabIndex = 8
@@ -122,7 +122,7 @@ Partial Class InventarioForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(30, 192)
+        Label6.Location = New Point(29, 110)
         Label6.Name = "Label6"
         Label6.Size = New Size(36, 15)
         Label6.TabIndex = 9
@@ -131,7 +131,7 @@ Partial Class InventarioForm
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(14, 163)
+        Label7.Location = New Point(223, 76)
         Label7.Name = "Label7"
         Label7.Size = New Size(69, 15)
         Label7.TabIndex = 10
@@ -139,35 +139,35 @@ Partial Class InventarioForm
         ' 
         ' nudValorMercado
         ' 
-        nudValorMercado.Location = New Point(90, 134)
+        nudValorMercado.Location = New Point(299, 47)
         nudValorMercado.Name = "nudValorMercado"
         nudValorMercado.Size = New Size(120, 23)
         nudValorMercado.TabIndex = 11
         ' 
         ' nudPrecioCoste
         ' 
-        nudPrecioCoste.Location = New Point(89, 107)
+        nudPrecioCoste.Location = New Point(298, 20)
         nudPrecioCoste.Name = "nudPrecioCoste"
         nudPrecioCoste.Size = New Size(120, 23)
         nudPrecioCoste.TabIndex = 12
         ' 
         ' txtDescripcion
         ' 
-        txtDescripcion.Location = New Point(90, 160)
+        txtDescripcion.Location = New Point(299, 73)
         txtDescripcion.Name = "txtDescripcion"
         txtDescripcion.Size = New Size(100, 23)
         txtDescripcion.TabIndex = 13
         ' 
         ' txtStock
         ' 
-        txtStock.Location = New Point(90, 189)
+        txtStock.Location = New Point(89, 107)
         txtStock.Name = "txtStock"
         txtStock.Size = New Size(100, 23)
         txtStock.TabIndex = 14
         ' 
         ' btnGuardar
         ' 
-        btnGuardar.Location = New Point(46, 245)
+        btnGuardar.Location = New Point(135, 136)
         btnGuardar.Name = "btnGuardar"
         btnGuardar.Size = New Size(75, 23)
         btnGuardar.TabIndex = 15
@@ -176,7 +176,7 @@ Partial Class InventarioForm
         ' 
         ' btnEliminar
         ' 
-        btnEliminar.Location = New Point(146, 245)
+        btnEliminar.Location = New Point(235, 136)
         btnEliminar.Name = "btnEliminar"
         btnEliminar.Size = New Size(75, 23)
         btnEliminar.TabIndex = 16
