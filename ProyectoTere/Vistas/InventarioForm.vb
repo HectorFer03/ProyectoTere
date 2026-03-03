@@ -74,7 +74,6 @@ Public Class InventarioForm
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        ' Prevenir colapso si el usuario deja la caja de "Stock" vacía usando TryParse
         Dim stockActual As Integer = 0
         If Not Integer.TryParse(txtStock.Text, stockActual) Then
             MessageBox.Show("Por favor, asegúrese de ingresar un número válido en el campo Stock.")
@@ -82,7 +81,7 @@ Public Class InventarioForm
         End If
 
         If idProductoSeleccionado > 0 Then
-            ' Actualización permitiendo editar precio, descripción y stock
+            ' Actualización parametrizada
             Dim query As String = "UPDATE Productos SET precio_coste = @coste, valor_mercado = @mercado, descripcion = @desc, stock = @stock WHERE id = @id"
             Dim params As New Dictionary(Of String, Object) From {
                 {"@coste", nudPrecioCoste.Value},
@@ -91,17 +90,22 @@ Public Class InventarioForm
                 {"@stock", stockActual},
                 {"@id", idProductoSeleccionado}
             }
-            db.EjecutarComando(query, params)
-            MessageBox.Show("Producto actualizado correctamente.")
+
+            ' Comprobamos si realmente se actualizó algo en la BD
+            Dim filasAfectadas As Integer = db.EjecutarComando(query, params)
+            If filasAfectadas > 0 Then
+                MessageBox.Show("Producto actualizado y guardado en la Base de Datos.")
+            Else
+                MessageBox.Show("No se detectaron cambios o el producto no existe.")
+            End If
         Else
-            ' Lógica para Insertar nuevo producto
-            MessageBox.Show("Guarda desde el botón 'Nuevo' aún no implementado en la vista.")
+            MessageBox.Show("Selecciona un producto de la tabla primero.")
         End If
+
         CargarInventario()
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        ' Validar correctamente el stock antes de comprobar si es > 0
         Dim stockActual As Integer = 0
         Integer.TryParse(txtStock.Text, stockActual)
 
@@ -113,9 +117,14 @@ Public Class InventarioForm
         If idProductoSeleccionado > 0 Then
             Dim query As String = "UPDATE Productos SET estado_activo = 0 WHERE id = @id"
             Dim params As New Dictionary(Of String, Object) From {{"@id", idProductoSeleccionado}}
-            db.EjecutarComando(query, params)
-            MessageBox.Show("Artículo dado de baja correctamente.")
-            CargarInventario()
+            Dim filasAfectadas As Integer = db.EjecutarComando(query, params)
+
+            If filasAfectadas > 0 Then
+                MessageBox.Show("Artículo dado de baja correctamente.")
+                CargarInventario()
+            Else
+                MessageBox.Show("Error al dar de baja. Verifique la conexión.")
+            End If
         Else
             MessageBox.Show("Por favor, seleccione un artículo de la lista primero.")
         End If
